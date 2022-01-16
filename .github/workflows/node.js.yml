@@ -30,5 +30,5 @@ jobs:
       run: yarn install
     - name: run lint
       run: yarn lint
-    - name: run build
-      run: yarn build
+    - name: run build with webpack
+      run: yarn w:build
