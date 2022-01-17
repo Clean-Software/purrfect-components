@@ -12,7 +12,7 @@ const config: Configuration = {
     mode: mode,
     entry: './src/index.ts',
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
     },
     optimization: {
@@ -89,7 +89,7 @@ const config: Configuration = {
         extensions: ['.tsx', '.ts', '.js', '.css', '.scss'],
     },
     // devServer: {
-    //     static: path.resolve(__dirname, 'build'),
+    //     static: path.resolve(__dirname, 'dist'),
     //     compress: true,
     //     port: 4000,
     // },
