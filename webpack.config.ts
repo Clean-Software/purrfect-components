@@ -10,7 +10,7 @@ const mode = 'production';
 
 const config: Configuration = {
     mode: mode,
-    entry: './src/index.tsx',
+    entry: './src/index.ts',
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: 'index.js',
