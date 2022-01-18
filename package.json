@@ -22,12 +22,24 @@
     "w:build": "webpack --config webpack.config.ts",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint \"**/*.{ts,tsx}\" --quiet --fix"
+    "lint": "eslint \"**/*.{ts,tsx}\" --quiet --fix",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -49,6 +61,14 @@
     "@babel/preset-react": "^7.16.7",
     "@babel/preset-typescript": "^7.16.7",
     "@babel/runtime": "^7.16.7",
+    "@storybook/addon-actions": "^6.4.13",
+    "@storybook/addon-essentials": "^6.4.13",
+    "@storybook/addon-links": "^6.4.13",
+    "@storybook/builder-webpack5": "^6.4.13",
+    "@storybook/manager-webpack5": "^6.4.13",
+    "@storybook/node-logger": "^6.4.13",
+    "@storybook/preset-create-react-app": "^4.0.0",
+    "@storybook/react": "^6.4.13",
     "@types/fork-ts-checker-webpack-plugin": "^0.4.5",
     "@types/mini-css-extract-plugin": "^2.4.0",
     "@types/terser-webpack-plugin": "^5.2.0",
@@ -67,6 +87,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-storybook": "^0.5.5",
     "eslint-webpack-plugin": "^3.1.1",
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^6.5.0",

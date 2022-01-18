@@ -1,21 +1,35 @@
-import { DetailedHTMLProps, ButtonHTMLAttributes, FunctionComponent, CSSProperties } from 'react';
+import React from 'react';
+import './button.css';
 
-interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-    background?: string;
-    color?: string;
+interface ButtonProps
+    extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+    primary?: boolean;
+    backgroundColor?: string;
+    size?: 'small' | 'medium' | 'large';
+    label: string;
+    onClick?: () => void;
 }
 
-const Button: FunctionComponent<ButtonProps> = (props) => {
-    const { children, background, color, style } = props;
-    const _style: CSSProperties = style || {};
-    if (background) _style.background = background;
-    if (color) _style.color = color;
+/**
+ * Primary UI component for user interaction
+ */
+export const Button: React.FunctionComponent<ButtonProps> = ({
+    primary = false,
+    size = 'medium',
+    backgroundColor,
+    label,
+    ...props
+}) => {
+    const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
     return (
         // eslint-disable-next-line react/react-in-jsx-scope
-        <button style={_style} {...props}>
-            {children}
+        <button
+            type="button"
+            className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+            style={{ backgroundColor }}
+            {...props}
+        >
+            {label}
         </button>
     );
 };
-
-export default Button;
