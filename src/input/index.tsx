@@ -1,5 +1,5 @@
 import React from 'react';
-import './input.css';
+import Input from './styles';
 
 interface InputProps
     extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'size'> {
@@ -10,9 +10,9 @@ interface InputProps
 /**
  * Primary UI component for user interaction
  */
-export const Input: React.FunctionComponent<InputProps> = ({ size = 'medium', error, ...props }) => {
+export const purrInput: React.FunctionComponent<InputProps> = ({ size = 'medium', error, ...props }) => {
     const currentMode = error ? 'storybook-input--error' : 'storybook-input--normal';
     const currentSize = size ? `storybook-input--${size}` : '';
 
-    return <input type="text" className={['storybook-input', currentMode, currentSize].join(' ')} {...props} />;
+    return <Input type="text" className={['storybook-input', currentMode, currentSize].join(' ')} {...props} />;
 };
