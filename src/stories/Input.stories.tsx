@@ -24,3 +24,21 @@ Error.args = {
     placeholder: "I'm a placeholder",
     error: true,
 };
+
+export const Small = Template.bind({});
+Small.args = {
+    placeholder: "I'm a placeholder",
+    size: 'small',
+};
+
+export const Medium = Template.bind({});
+Medium.args = {
+    placeholder: "I'm a placeholder",
+    size: 'medium',
+};
+
+export const Large = Template.bind({});
+Large.args = {
+    placeholder: "I'm a placeholder",
+    size: 'large',
+};

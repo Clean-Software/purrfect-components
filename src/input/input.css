@@ -6,6 +6,17 @@
   outline: none;
 }
 
+.storybook-input--small {
+  font-size: 12px;
+}
+.storybook-input--medium {
+  font-size: 14px;
+  
+}
+.storybook-input--large {
+  font-size: 15px;
+}
+
 .storybook-input--normal:focus {
   border: 1px solid #21aeff;
 }
