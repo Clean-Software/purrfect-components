@@ -9,6 +9,11 @@ export default {
     argTypes: {
         placeholder: { type: 'string' },
         error: { type: 'boolean', defaultValue: false },
+        size: {
+            options: ['small', 'medium', 'large'],
+            defaultValue: 'medium',
+            control: { type: 'radio' },
+        },
     },
 } as ComponentMeta<typeof Input>;
 
