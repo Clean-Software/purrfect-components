@@ -1,17 +1,17 @@
-import React from 'react';
+import { DetailedHTMLProps, ButtonHTMLAttributes, FunctionComponent, CSSProperties } from 'react';
 
-interface ButtonProps
-    extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     background?: string;
     color?: string;
 }
 
-const Button: React.FunctionComponent<ButtonProps> = (props) => {
+const Button: FunctionComponent<ButtonProps> = (props) => {
     const { children, background, color, style } = props;
-    const _style: React.CSSProperties = style || {};
+    const _style: CSSProperties = style || {};
     if (background) _style.background = background;
     if (color) _style.color = color;
     return (
+        // eslint-disable-next-line react/react-in-jsx-scope
         <button style={_style} {...props}>
             {children}
         </button>
