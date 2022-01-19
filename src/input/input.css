@@ -18,7 +18,7 @@
 }
 
 .storybook-input--normal:focus {
-  border: 1px solid #21aeff;
+  border: 1px solid #1ea7fd;
 }
 
 .storybook-input--normal:focus::placeholder {
