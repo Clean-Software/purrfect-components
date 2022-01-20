@@ -1,8 +1,7 @@
-import React from 'react';
-import Input from './styles';
+import { DetailedHTMLProps, InputHTMLAttributes, FunctionComponent } from 'react';
+import './styles.scss';
 
-interface InputProps
-    extends Omit<React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'size'> {
+interface InputProps extends Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'size'> {
     error?: boolean;
     size?: 'small' | 'medium' | 'large';
 }
@@ -10,9 +9,10 @@ interface InputProps
 /**
  * Primary UI component for user interaction
  */
-export const purrInput: React.FunctionComponent<InputProps> = ({ size = 'medium', error, ...props }) => {
+export const Input: FunctionComponent<InputProps> = ({ size = 'medium', error, ...props }) => {
     const currentMode = error ? 'storybook-input--error' : 'storybook-input--normal';
     const currentSize = size ? `storybook-input--${size}` : '';
 
-    return <Input type="text" className={['storybook-input', currentMode, currentSize].join(' ')} {...props} />;
+    // eslint-disable-next-line react/react-in-jsx-scope
+    return <input type="text" className={['storybook-input', currentMode, currentSize].join(' ')} {...props} />;
 };
