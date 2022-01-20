@@ -1,4 +1,5 @@
 import React from 'react';
+import { mergeClassNames } from '../../services/classes';
 import './styles.scss';
 
 export interface ButtonProps
@@ -25,7 +26,7 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
         // eslint-disable-next-line react/react-in-jsx-scope
         <button
             type="button"
-            className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+            className={mergeClassNames(['storybook-button', `storybook-button--${size}`, mode])}
             style={{ backgroundColor }}
             {...props}
         >
