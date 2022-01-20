@@ -1,8 +1,8 @@
-import React from 'react';
+import { ButtonHTMLAttributes, DetailedHTMLProps, FunctionComponent } from 'react';
+import { mergeClassNames } from '../../utils/classes';
 import './styles.scss';
 
-export interface ButtonProps
-    extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+export interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     primary?: boolean;
     backgroundColor?: string;
     size?: 'small' | 'medium' | 'large';
@@ -13,7 +13,7 @@ export interface ButtonProps
 /**
  * Primary UI component for user interaction
  */
-export const Button: React.FunctionComponent<ButtonProps> = ({
+export const Button: FunctionComponent<ButtonProps> = ({
     primary = false,
     size = 'medium',
     backgroundColor,
@@ -22,10 +22,9 @@ export const Button: React.FunctionComponent<ButtonProps> = ({
 }) => {
     const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
     return (
-        // eslint-disable-next-line react/react-in-jsx-scope
         <button
             type="button"
-            className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+            className={mergeClassNames(['storybook-button', `storybook-button--${size}`, mode])}
             style={{ backgroundColor }}
             {...props}
         >

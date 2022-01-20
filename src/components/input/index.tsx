@@ -1,4 +1,5 @@
 import { DetailedHTMLProps, InputHTMLAttributes, FunctionComponent } from 'react';
+import { mergeClassNames } from '../../utils/classes';
 import './styles.scss';
 
 export interface InputProps
@@ -14,6 +15,5 @@ export const Input: FunctionComponent<InputProps> = ({ size = 'medium', error, .
     const currentMode = error ? 'storybook-input--error' : 'storybook-input--normal';
     const currentSize = size ? `storybook-input--${size}` : '';
 
-    // eslint-disable-next-line react/react-in-jsx-scope
-    return <input type="text" className={['storybook-input', currentMode, currentSize].join(' ')} {...props} />;
+    return <input type="text" className={mergeClassNames(['storybook-input', currentMode, currentSize])} {...props} />;
 };
