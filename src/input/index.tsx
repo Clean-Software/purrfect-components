@@ -1,7 +1,8 @@
 import { DetailedHTMLProps, InputHTMLAttributes, FunctionComponent } from 'react';
 import './styles.scss';
 
-interface InputProps extends Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'size'> {
+export interface InputProps
+    extends Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'size'> {
     error?: boolean;
     size?: 'small' | 'medium' | 'large';
 }

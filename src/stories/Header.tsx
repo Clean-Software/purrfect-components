@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '../';
 import './header.css';
 
-interface HeaderProps {
+export interface HeaderProps {
     user?: object;
     onLogin: () => void;
     onLogout: () => void;
