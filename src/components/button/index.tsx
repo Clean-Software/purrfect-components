@@ -1,5 +1,5 @@
 import React from 'react';
-import { mergeClassNames } from '../../services/classes';
+import { mergeClassNames } from '../../utils/classes';
 import './styles.scss';
 
 export interface ButtonProps
