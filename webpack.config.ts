@@ -14,6 +14,7 @@ const config: Configuration = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
+        chunkFormat: 'module',
     },
     optimization: {
         sideEffects: false,
@@ -56,10 +57,7 @@ const config: Configuration = {
                 test: /\.(ts|js)x?$/,
                 exclude: /node_modules/,
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
-                    },
+                    loader: 'ts-loader',
                 },
             },
             // Loading images

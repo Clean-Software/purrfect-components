@@ -1,7 +1,7 @@
 import React from 'react';
-import './button.css';
+import './styles.scss';
 
-interface ButtonProps
+export interface ButtonProps
     extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     primary?: boolean;
     backgroundColor?: string;
