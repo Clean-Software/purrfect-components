@@ -9,7 +9,7 @@ export default {
     argTypes: {
         placeholder: { type: 'string' },
         error: { type: 'boolean', defaultValue: false },
-        size: {
+        inputSize: {
             options: ['small', 'medium', 'large'],
             defaultValue: 'medium',
             control: { type: 'radio' },
@@ -33,17 +33,17 @@ Error.args = {
 export const Small = Template.bind({});
 Small.args = {
     placeholder: "I'm a placeholder",
-    size: 'small',
+    inputSize: 'small',
 };
 
 export const Medium = Template.bind({});
 Medium.args = {
     placeholder: "I'm a placeholder",
-    size: 'medium',
+    inputSize: 'medium',
 };
 
 export const Large = Template.bind({});
 Large.args = {
     placeholder: "I'm a placeholder",
-    size: 'large',
+    inputSize: 'large',
 };
