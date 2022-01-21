@@ -10,7 +10,7 @@ export const Checkbox: FunctionComponent<CheckboxProps> = ({ label, ...props }) 
     const checkboxRef = useRef<HTMLInputElement>(null);
 
     const handleClick = () => {
-        if (!checkboxRef.current) return;
+        if (!checkboxRef.current || props.disabled) return;
         checkboxRef.current.checked = !checkboxRef.current.checked;
     };
 

@@ -54,6 +54,10 @@ const Container = styled.div`
         z-index: -1;
         border: 1px solid transparent;
     }
+
+    & input:disabled + label {
+        color: #ababab;
+    }
 `;
 
 export { Container };
