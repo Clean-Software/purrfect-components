@@ -1,34 +1,21 @@
-import { ButtonHTMLAttributes, DetailedHTMLProps, FunctionComponent } from 'react';
-import { mergeClassNames } from '../../utils/classes';
-import './styles.scss';
+import { ButtonHTMLAttributes, FunctionComponent } from 'react';
 
-export interface ButtonProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
+import { Button as ButtonComponent } from './styles';
+
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     primary?: boolean;
     backgroundColor?: string;
     size?: 'small' | 'medium' | 'large';
     label: string;
-    onClick?: () => void;
 }
 
 /**
  * Primary UI component for user interaction
  */
-export const Button: FunctionComponent<ButtonProps> = ({
-    primary = false,
-    size = 'medium',
-    backgroundColor,
-    label,
-    ...props
-}) => {
-    const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+export const Button: FunctionComponent<ButtonProps> = ({ label, ...props }) => {
     return (
-        <button
-            type="button"
-            className={mergeClassNames(['storybook-button', `storybook-button--${size}`, mode])}
-            style={{ backgroundColor }}
-            {...props}
-        >
+        <ButtonComponent type="button" {...props}>
             {label}
-        </button>
+        </ButtonComponent>
     );
 };

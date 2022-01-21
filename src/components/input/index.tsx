@@ -1,19 +1,17 @@
-import { DetailedHTMLProps, InputHTMLAttributes, FunctionComponent } from 'react';
-import { mergeClassNames } from '../../utils/classes';
-import './styles.scss';
+import { InputHTMLAttributes, forwardRef } from 'react';
 
-export interface InputProps
-    extends Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'size'> {
+import { Input as InputComponent } from './styles';
+
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     error?: boolean;
-    size?: 'small' | 'medium' | 'large';
+    inputSize?: 'small' | 'medium' | 'large';
 }
 
 /**
  * Primary UI component for user interaction
  */
-export const Input: FunctionComponent<InputProps> = ({ size = 'medium', error, ...props }) => {
-    const currentMode = error ? 'storybook-input--error' : 'storybook-input--normal';
-    const currentSize = size ? `storybook-input--${size}` : '';
+export const Input = forwardRef<HTMLInputElement, InputProps>(({ ...props }, ref) => {
+    return <InputComponent type="text" {...props} ref={ref} />;
+});
 
-    return <input type="text" className={mergeClassNames(['storybook-input', currentMode, currentSize])} {...props} />;
-};
+Input.displayName = 'Input';
