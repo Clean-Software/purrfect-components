@@ -6,7 +6,6 @@
     "module": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "start": "react-scripts start",
         "storybook": "start-storybook -p 6006 -s public",
         "build": "rollup -c",
         "build-storybook": "build-storybook -s public",
