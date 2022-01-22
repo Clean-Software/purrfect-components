@@ -1,7 +1,8 @@
 {
     "name": "react-lib-components",
     "version": "0.1.0",
-    "private": true,
+    "private": false,
+    "license": "MIT",
     "module": "dist/index.js",
     "types": "dist/index.d.ts",
     "dependencies": {
