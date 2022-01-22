@@ -1,31 +1,26 @@
 {
-  "compilerOptions": {
-    "target": "es6",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "module": "ESNext",
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": false,
-    "jsx": "react-jsx",
-    "outDir": "./dist",
-    "sourceMap": false,
-    "declaration": true,
-    "declarationDir": "types",
-    "emitDeclarationOnly": true
-  },
-  "include": [
-    "src"
-  ]
+    "compilerOptions": {
+        "target": "es6",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "module": "ESNext",
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": false,
+        "jsx": "react-jsx",
+        "outDir": "./dist",
+        "sourceMap": false,
+        "declaration": true,
+        "declarationDir": "types",
+        "emitDeclarationOnly": true
+    },
+    "exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/*.test.tsx", "**/*.stories.scss"],
+    "include": ["src"]
 }

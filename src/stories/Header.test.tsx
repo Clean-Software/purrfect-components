@@ -1,4 +1,4 @@
-import { Button } from '../';
+import { Button } from '..';
 import './header.scss';
 
 export interface HeaderProps {
