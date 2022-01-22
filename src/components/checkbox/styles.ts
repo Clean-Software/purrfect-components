@@ -22,7 +22,6 @@ const Container = styled.div`
         font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         padding-left: 1.85714em;
         padding-top: 1px;
-        cursor: pointer;
 
         &:before {
             position: absolute;
