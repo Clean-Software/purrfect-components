@@ -21,6 +21,10 @@
         "declarationDir": "types",
         "emitDeclarationOnly": true
     },
+    "import/no-extraneous-dependencies": [
+        "error",
+        { "devDependencies": false, "optionalDependencies": false, "peerDependencies": false }
+    ],
     "exclude": ["node_modules", "dist", "**/*.stories.tsx", "**/*.test.tsx", "**/*.stories.scss"],
     "include": ["src"]
 }

@@ -1,25 +1,33 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import babel from 'rollup-plugin-babel';
 import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
 import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
 import dts from 'rollup-plugin-dts';
 
-const packageJson = require('./package.json');
-
 export default [
     {
         input: 'src/index.ts',
         output: [
             {
-                file: packageJson.module,
-                format: 'esm',
+                file: 'dist/index.js',
+                format: 'cjs',
+            },
+            {
+                file: 'dist/index.es.js',
+                format: 'es',
+                exports: 'named',
             },
         ],
         external: ['styled-components'],
         plugins: [
+            babel({
+                exclude: 'node_modules/**',
+                presets: ['@babel/preset-react'],
+            }),
             resolve({ browser: true }),
             external(),
             typescript({ tsconfig: './tsconfig.json' }),
