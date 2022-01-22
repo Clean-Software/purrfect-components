@@ -1,11 +1,11 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ButtonGroup, Button } from '../';
+import { ButtonGroup, Button } from '..';
 
 const config = {
     buttonList: [
         {
-            label: 'Purffect',
+            label: 'Purrfect',
             color: '#e9c46a',
             backgroundColor: '#264653',
         },
