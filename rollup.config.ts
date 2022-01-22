@@ -24,7 +24,10 @@ export default [
             external(),
             typescript({ tsconfig: './tsconfig.json' }),
             commonjs(),
-            postcss(),
+            postcss({
+                minimize: true,
+                exclude: ['node_modules/**', 'stories/**'],
+            }),
             terser(),
         ],
     },

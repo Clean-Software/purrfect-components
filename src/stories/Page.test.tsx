@@ -1,4 +1,4 @@
-import { Header } from './Header';
+import { Header } from './Header.test';
 import './page.scss';
 
 export interface PageProps {
