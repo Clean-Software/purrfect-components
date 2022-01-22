@@ -53,6 +53,9 @@ const Container = styled.div`
         z-index: -1;
         border: 1px solid transparent;
     }
+    & input:disabled {
+        cursor: not-allowed;
+    }
 
     & input:disabled + label {
         color: #ababab;
