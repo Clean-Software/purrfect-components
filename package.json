@@ -1,6 +1,6 @@
 {
-    "name": "react-lib-components",
-    "version": "0.1.0",
+    "name": "purrfect-components",
+    "version": "0.0.3",
     "private": false,
     "license": "MIT",
     "module": "dist/index.js",
