@@ -1,37 +1,37 @@
 {
-  "parser": "@typescript-eslint/parser",
-  "root": true,
-  "parserOptions": {
-      "ecmaVersion": 2021,
-      "sourceType": "module",
-      "ecmaFeatures": {
-          "jsx": true // Allows for the parsing of JSX
-      }
-  },
-  "plugins": ["@typescript-eslint", "react-hooks"],
-  "extends": [
-        "plugin:storybook/recommended",
-        "plugin:react/recommended", 
-        "plugin:@typescript-eslint/recommended", 
-        "plugin:prettier/recommended"
-],
-  "rules": {
-      "react/react-in-jsx-scope": "off",
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
-      "react/prop-types": "off",
-      "prettier/prettier": [
-        "error",
-        {
-            "endOfLine": "auto"
+    "parser": "@typescript-eslint/parser",
+    "root": true,
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true // Allows for the parsing of JSX
         }
-    ]
-  },
-  "settings": {
-      "react": {
-          "pragma": "React",
-          "version": "detect"
-      }
-  },
-  "ignorePatterns": ["*.css", "*.scss"]
+    },
+    "plugins": ["@typescript-eslint", "react-hooks"],
+    "extends": [
+        "plugin:storybook/recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/prop-types": "off",
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ]
+    },
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        }
+    },
+    "ignorePatterns": ["*.css", "*.scss", "*.d.ts"]
 }

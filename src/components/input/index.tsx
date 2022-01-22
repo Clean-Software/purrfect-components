@@ -7,9 +7,6 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     inputSize?: 'small' | 'medium' | 'large';
 }
 
-/**
- * Primary UI component for user interaction
- */
 export const Input = forwardRef<HTMLInputElement, InputProps>(({ ...props }, ref) => {
     return <InputComponent type="text" {...props} ref={ref} />;
 });
