@@ -1,1 +1,1 @@
-![purrfect](https://i.gifer.com/5fzL.gif)
+![purrfect](https://cdn.discordapp.com/attachments/768646098964709446/934888574011195442/5fzL.gif)
