@@ -1,15 +1,9 @@
 import styled from 'styled-components';
 import color from 'color';
-import { LabelProps } from '.';
 
-interface DetailProps {
-    backgroundColor?: string;
+interface LabelProps {
+    backgroundColor: string;
 }
-
-const getBackgroundColor = (backgroundColor?: string) => {
-    if (backgroundColor) return backgroundColor;
-    return '#e8e8e8';
-};
 
 const Container = styled.div<LabelProps>`
     font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -19,18 +13,18 @@ const Container = styled.div<LabelProps>`
     justify-content: center;
     gap: 1em;
     width: fit-content;
-    background-color: ${({ backgroundColor }) => getBackgroundColor(backgroundColor)};
+    background-color: ${({ backgroundColor }) => backgroundColor};
     border-radius: 5px;
     font-weight: 700;
     font-size: 0.85em;
     line-height: 2em;
     padding: 0em 1em;
     overflow: hidden;
-    color: ${({ backgroundColor }) => (color(getBackgroundColor(backgroundColor)).isDark() ? '#fff' : '#000')};
+    color: ${({ backgroundColor }) => (color(backgroundColor).isDark() ? '#fff' : '#000')};
 `;
 
-const Detail = styled.span<DetailProps>`
-    background-color: ${({ backgroundColor }) => color(getBackgroundColor(backgroundColor)).darken(0.2).hex()};
+const Detail = styled.span<LabelProps>`
+    background-color: ${({ backgroundColor }) => color(backgroundColor).darken(0.2).hex()};
     padding: 0 0.5em;
     margin: 0 -1em 0 0;
 `;

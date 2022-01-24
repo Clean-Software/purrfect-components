@@ -9,12 +9,12 @@ export interface LabelProps extends HTMLAttributes<HTMLDivElement> {
     backgroundColor?: string;
 }
 
-export const Label: FunctionComponent<LabelProps> = ({ detail, image, ...props }) => {
+export const Label: FunctionComponent<LabelProps> = ({ detail, image, backgroundColor = '#e8e8e8', ...props }) => {
     return (
-        <Container {...props}>
+        <Container backgroundColor={backgroundColor}>
             {image && <Image src={image} alt="Avatar" />}
             {props.label}
-            {detail && <Detail backgroundColor={props.backgroundColor}>{detail}</Detail>}
+            {detail && <Detail backgroundColor={backgroundColor}>{detail}</Detail>}
         </Container>
     );
 };
