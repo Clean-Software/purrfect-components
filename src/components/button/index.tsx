@@ -8,6 +8,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: 'small' | 'medium' | 'large';
 }
 
-export const Button: FunctionComponent<ButtonProps> = ({ ...props }) => {
-    return <ButtonComponent type="button" {...props}></ButtonComponent>;
+export const Button: FunctionComponent<ButtonProps> = (props) => {
+    return <ButtonComponent type="button" {...props} />;
 };
