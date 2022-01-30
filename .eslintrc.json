@@ -1,36 +1,37 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "extends": ["plugin:react/recommended", "airbnb", "airbnb-typescript"],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
+    "parser": "@typescript-eslint/parser",
+    "root": true,
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true // Allows for the parsing of JSX
+        }
     },
-    "ecmaVersion": 2021,
-    "sourceType": "module",
-    "project": "./tsconfig.json"
-  },
-  "settings": {
-    "react": {
-        "pragma": "React",
-        "version": "detect"
-    },
-    "import/resolver": {
-      "node": {
-        "extensions": [".js",".jsx",".tsx"]
-      }
-    }
-  } ,
-  "plugins": ["react", "@typescript-eslint"],
-  "rules": {
-    "react/jsx-filename-extension": [
-      2,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx", ".css"] }
+    "plugins": ["@typescript-eslint", "react-hooks"],
+    "extends": [
+        "plugin:storybook/recommended",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
     ],
-    "react/prop-types": "off"
-  },
-  "ignorePatterns": ["*.css", "*.scss"]
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/prop-types": "off",
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ]
+    },
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "detect"
+        }
+    },
+    "ignorePatterns": ["*.css", "*.scss", "*.d.ts"]
 }
