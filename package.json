@@ -6,6 +6,7 @@
     "main": "dist/index.js",
     "module": "dist/index.es.js",
     "types": "dist/index.d.ts",
+    "homepage": "http://Clean-Software.github.io/purrfect-components",
     "files": [
         "dist/*.js",
         "dist/**/&.js",
@@ -13,9 +14,11 @@
         "dist/**/&.d.ts"
     ],
     "scripts": {
+        "predeploy": "npm run build-storybook",
+        "deploy-storybook": "gh-pages -d storybook-static",
         "storybook": "start-storybook -p 6006 -s public",
         "build": "rollup -c",
-        "build-storybook": "build-storybook -s public",
+        "build-storybook": "build-storybook",
         "lint": "eslint \"**/*.{ts,tsx}\" --quiet --fix"
     },
     "dependencies": {
@@ -54,6 +57,7 @@
         "eslint-plugin-react": "^7.28.0",
         "eslint-plugin-react-hooks": "^4.3.0",
         "eslint-plugin-storybook": "^0.5.6",
+        "gh-pages": "^3.2.3",
         "prettier": "^2.5.1",
         "react-dom": "^17.0.2",
         "react-scripts": "5.0.0",
