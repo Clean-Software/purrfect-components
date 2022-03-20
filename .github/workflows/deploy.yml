@@ -26,5 +26,8 @@ jobs:
               run: yarn install --frozen-lockfile
             - name: Building
               run: yarn build-storybook
+            - name: set git config
+              run: git config --global user.email ${{ secrets.CONFIGEMAIL }}
+              run: git config --global user.name ${{ secrets.CONFIGNAME }}
             - name: Deployment
               run: yarn deploy-storybook
