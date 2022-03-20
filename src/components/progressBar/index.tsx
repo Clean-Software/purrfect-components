@@ -1,22 +1,19 @@
+import { FunctionComponent, HTMLAttributes } from 'react';
 import { ProgressBarComponent } from './styles';
-import { FunctionComponent, ReactHTMLElement } from 'react';
-
-export interface ProgressBarProps extends ReactHTMLElement<HTMLDivElement> {
+export interface ProgressBarProps extends HTMLAttributes<HTMLDivElement> {
     now: number;
-    backgroundColor: string;
-    progressColor: string;
+    backgroundColor?: string;
+    progressColor?: string;
 }
 
 export const ProgressBar: FunctionComponent<ProgressBarProps> = ({
-    now = 0,
-    backgroundColor = '#000',
-    progressColor = 'green',
+    backgroundColor = '#e6e6e6',
+    progressColor = '#a7ffa7',
+    ...rest
 }: ProgressBarProps) => {
     return (
-        <ProgressBarComponent now={now} backgroundColor={backgroundColor} progressColor={progressColor}>
-            <div>
-                <div />
-            </div>
+        <ProgressBarComponent backgroundColor={backgroundColor} progressColor={progressColor} {...rest}>
+            <div className="progress" />
         </ProgressBarComponent>
     );
 };

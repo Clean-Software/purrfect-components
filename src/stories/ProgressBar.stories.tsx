@@ -12,11 +12,10 @@ const Template: ComponentStory<typeof ProgressBar> = (args) => <ProgressBar {...
 
 export const Primary = Template.bind({});
 Primary.args = {
-    backgroundColor: 'green',
+    now: 35,
 };
 export const Secundary = Template.bind({});
 Secundary.args = {
-    backgroundColor: 'gray',
-    progressColor: 'green',
-    now: 35,
+    progressColor: 'rgba(234, 166, 255, 1)',
+    now: 50,
 };
