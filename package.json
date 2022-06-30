@@ -18,7 +18,7 @@
         "deploy-storybook": "gh-pages -d storybook-static",
         "storybook": "start-storybook -p 6006 -s public",
         "build": "rollup -c",
-        "build-storybook": "build-storybook",
+        "build-storybook": "build-storybook -o docs-build",
         "lint": "eslint \"**/*.{ts,tsx}\" --quiet --fix"
     },
     "dependencies": {
