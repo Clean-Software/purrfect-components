@@ -24,3 +24,4 @@ yarn-error.log*
 
 #static content storybook
 /storybook-static
+/docs-build
